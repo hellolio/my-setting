@@ -1,0 +1,77 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+
+
+format = """
+$directory\
+$git_branch\
+$git_status\
+$time\
+$cmd_duration\
+$character\
+"""
+palette = 'cyberdream'
+[palettes.cyberdream]
+text      = '#c7cfff'
+overlay1  = '#242937'
+color_fg0 = '#c7cfff'
+color_bg0 = '#0a0e14'
+color_bg1 = '#0f1117'
+color_bg3 = '#242937'
+color_blue   = '#5ea1ff'
+color_aqua   = '#5ef1ff'
+color_green  = '#5eff6c'
+color_orange = '#ffb65e'
+color_red    = '#ff6e5e'
+color_yellow = '#f1ff5e'
+color_pink   = '#ff5ea0'
+color_gold = '#d8c97a'
+red = '#ff6e5e'
+muted = '#8b92b2'
+green_soft = '#6fbf7a'
+
+[os.symbols]
+Windows = ""
+Ubuntu = ""
+Debian = ""
+Arch = ""
+Manjaro = ""
+Linux = ""
+Macos = ""
+Unknown = ""
+
+[directory]
+#style = "fg:color_blue bold"
+format = '([$path]($style))'
+#truncation_length = 3
+#truncation_symbol = "./"
+
+[git_branch]
+style = "fg:color_gold dimmed"
+disabled = false
+symbol = ""
+format = '( [$symbol $branch]($style))'
+
+[git_status]
+disabled = false
+style = "fg:color_orange dimmed"
+format = '([$all_status]($style))'
+
+[time]
+disabled = false
+time_format = "%R"
+style = "fg:muted dimmed"
+format = ' [$time]($style)'
+
+[character]
+format = "[$symbol](fg:overlay1) "
+success_symbol = '[❯](fg:color_green bold dimmed)'
+error_symbol   = '[❯](fg:color_red bold)'
+
+
+[cmd_duration]
+min_time = 1000
+show_milliseconds = false
+disabled = false
+format="[ 󰞌$duration]($style)"
+
