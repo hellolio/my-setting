@@ -1,0 +1,64 @@
+{
+    // 设置主题
+    "workbench.colorTheme": "One Dark Pro Night Flat",
+    "editor.fontFamily": "JetBrains Mono, monospace",
+    "editor.fontSize": 15,
+    // "editor.fontLigatures": true,
+
+
+    
+    // 　Gremlins tracker for Visual Studio Code设置全角空格显示
+    "gremlins.characters": {
+        "3000": {
+            "description": "全角",
+            "level": "warning"
+        }
+    },
+
+    // Render Line Endings设置换行符
+    "editor.renderWhitespace": "all",
+    "editor.renderControlCharacters": true,
+    "files.eol": "\n",
+
+
+
+    "extensions.autoUpdate": false,  // 禁用扩展自动更新
+    "update.mode": "none",            // 禁用自动更新
+    "extensions.autoCheckUpdates": false,  // 禁用扩展更新的自动检查
+    // "editor.mouseWheelZoom": true,   // 启用鼠标滚轮缩放功能
+    "files.autoSave": "afterDelay",  // 停止编辑一段时间后自动保存文件
+    "files.autoSaveDelay": 2000 ,    // 停止编辑一段时间(2s)后自动保存文件
+    
+    "editor.rulers": [80, 120],  // 设置两个标尺：分别在 80 列和 120 列
+    "workbench.editor.wrapTabs": true,  // 标签页过多的时候会自动换行显示，以保证显示所有标签页
+    "editor.wordWrap": "on",       // on:代码超出屏幕会自动换行显示， off：超出也不换行显示
+
+
+    "files.exclude": {
+        "**/.git": false,                                   // 不隐藏 .git 文件夹
+        "**/.svn": false,                                   // 不隐藏 .svn 文件夹
+        "**/.hg": false,                                    // 不隐藏 .hg 文件夹
+        "**/.DS_Store": false                               // 不隐藏 .DS_Store 文件夹
+    },
+
+    // =========设置python start=========
+    "[python]": {                                           // 仅对 python 文件生效
+        // "editor.defaultFormatter": "ms-python.autopep8", // 默认使用 autopep8 格式化
+        "editor.defaultFormatter": "charliermarsh.ruff",    // 默认使用 Ruff 格式化
+        "editor.formatOnSave": true,                        // 保存时自动格式化
+        "editor.codeActionsOnSave": {
+            "source.fixAll.ruff": "explicit",               // 保存时自动修复可修复的 lint 错误
+            "source.organizeImports.ruff": "explicit"       // 保存时自动排序 import 语句
+        }
+    },
+    "notebook.formatOnSave.enabled": true,                  // notebook 保存时自动格式化
+    "notebook.codeActionsOnSave": {
+        "source.fixAll": "explicit",                        // notebook 保存时自动修复可修复的 lint 错误
+        "source.organizeImports": "explicit"                // notebook 保存时自动排序 import 语句
+    },
+    "explorer.confirmDelete": false,
+    // =========设置python end=========
+
+
+
+}
