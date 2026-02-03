@@ -1,0 +1,60 @@
+import React, { useState } from "react";
+
+// 一个简单的全屏 Loading Modal
+function LoadingModal({ visible }) {
+  if (!visible) return null;
+
+  return (
+    <div style={styles.overlay}>
+      <div style={styles.modal}>
+        <div className="spinner" />
+        <p>处理中，请稍候…</p>
+      </div>
+    </div>
+  );
+}
+
+export default function Example() {
+  const [loading, setLoading] = useState(false);
+
+  const fetchData = async () => {
+    try {
+      setLoading(true); // 显示 modal
+
+      // 模拟 API 请求
+      await new Promise((resolve) => setTimeout(resolve, 2000));
+
+      // 这里放真实的 API 调用，例如：
+      // await fetch("/api/data");
+    } finally {
+      setLoading(false); // 请求完成，关闭 modal
+    }
+  };
+
+  return (
+    <div>
+      <button onClick={fetchData}>请求 API</button>
+
+      <LoadingModal visible={loading} />
+    </div>
+  );
+}
+
+const styles = {
+  overlay: {
+    position: "fixed",
+    inset: 0,
+    backgroundColor: "rgba(0, 0, 0, 0.4)", // 整个背景变灰
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    zIndex: 9999,
+  },
+  modal: {
+    background: "#fff",
+    padding: "24px 32px",
+    borderRadius: "8px",
+    textAlign: "center",
+    boxShadow: "0 4px 12px rgba(0,0,0,0.2)",
+  },
+};
