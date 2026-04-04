@@ -1,13 +1,14 @@
 {
-    // 设置主题
-    "workbench.colorTheme": "One Dark Pro Night Flat",
     "editor.fontFamily": "JetBrains Mono, monospace",
     "editor.fontSize": 15,
     // "editor.fontLigatures": true,
+    // 需要安装One Dark Pro
+    "workbench.colorTheme": "One Dark Pro Night Flat",
 
-
+    "window.titleBarStyle": "custom",
     
     // 　Gremlins tracker for Visual Studio Code设置全角空格显示
+    // 需要安装gremlins
     "gremlins.characters": {
         "3000": {
             "description": "全角",
@@ -16,6 +17,7 @@
     },
 
     // Render Line Endings设置换行符
+    // 需要安装Render Line Endings
     "editor.renderWhitespace": "all",
     "editor.renderControlCharacters": true,
     "files.eol": "\n",
@@ -44,6 +46,7 @@
     // =========设置python start=========
     "[python]": {                                           // 仅对 python 文件生效
         // "editor.defaultFormatter": "ms-python.autopep8", // 默认使用 autopep8 格式化
+        // 需要安装ruff
         "editor.defaultFormatter": "charliermarsh.ruff",    // 默认使用 Ruff 格式化
         "editor.formatOnSave": true,                        // 保存时自动格式化
         "editor.codeActionsOnSave": {
